@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.humberger-line {
+    @apply w-[30px] h-[2px] my-2 block bg-black;
+}

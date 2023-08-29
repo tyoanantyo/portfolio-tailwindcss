@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwindcss</title>
+    <title>Tyo Anantyo</title>
     <link rel="stylesheet" href="dist/css/style.css">
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+} else {
+  document.documentElement.classList.remove('dark')
+}
+    </script>
 </head>
 <body>
 <!-- Header Start -->
@@ -12,8 +19,8 @@
     <div class="container">
         <div class="flex items-center justify-between relative">
             <div class="px-4">
-                <a href="#home" class="block py-6">
-                <img src="dist/img/logo_light.png" alt="Logo-Setup" class="max-h-12">
+                <a href="#home" class="block py-6 text-primary font-bold text-xl">
+                tyoanantyo
                 </a>
             </div>
             <div class="flex items-center px-4">
@@ -23,31 +30,46 @@
                     <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
                 </button>
 
-                <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full 
-                    lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-md rounded-lg max-w-[250px] w-full right-4 top-full 
+                    lg:block lg:static lg:bg-transparent lg:dark:bg-transparent lg:max-w-full lg:shadow-none dark:shadow-slate-700 lg:rounded-none dark:bg-dark">
                     <ul class="block lg:flex">
                         <li class="group">
-                            <a href="#home" class="text-base text-dark py-2 mx-5 flex group-hover:text-primary">Home</a>
+                            <a href="#home" class="text-base text-dark py-2 mx-5 flex group-hover:text-primary dark:text-slate-200">Home</a>
                         </li>
                         <li class="group">
-                            <a href="#about" class="text-base text-dark py-2 mx-5 flex group-hover:text-primary">About</a>
+                            <a href="#about" class="text-base text-dark py-2 mx-5 flex group-hover:text-primary dark:text-slate-200">About</a>
                         </li>
                         <li class="group">
-                            <a href="#portofolio" class="text-base text-dark py-2 mx-5 flex group-hover:text-primary">Portofolio</a>
+                            <a href="#portofolio" class="text-base text-dark py-2 mx-5 flex group-hover:text-primary dark:text-slate-200">Portofolio</a>
                         </li>
                         <li class="group">
-                            <a href="#myproject" class="text-base text-dark py-2 mx-5 flex group-hover:text-primary">My Project</a>
+                            <a href="#clients" class="text-base text-dark py-2 mx-5 flex group-hover:text-primary dark:text-slate-200">Clients</a>
                         </li>
                         <li class="group">
-                            <a href="#contact" class="text-base text-dark py-2 mx-5 flex group-hover:text-primary">Contact</a>
+                            <a href="#myproject" class="text-base text-dark py-2 mx-5 flex group-hover:text-primary dark:text-slate-200">My Project</a>
                         </li>
                         <li class="group">
-                            <a href="#" class="text-base text-dark py-2 mx-5 flex group-hover:text-primary">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 flex items-center">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
-                                  </svg>
-                                  <span class="ml-1">Login</span>
-                            </a>
+                            <a href="#contact" class="text-base text-dark py-2 mx-5 flex group-hover:text-primary dark:text-slate-200">Contact</a>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="flex px-4 py-2">
+                                <span class="mr-2 text-sm text-slate-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                                      </svg>                                      
+                                    </span>
+                                    <input type="checkbox" class="hidden" id="dark-toggle">
+                                    <label for="dark-toggle">
+                                        <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1 dark:bg-primary">
+                                            <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out dark:bg-slate-500"></div>
+                                        </div>
+                                    </label>
+                                    <span class="ml-2 text-sm text-slate-400">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                                          </svg>                                      
+                                    </span>
+                            </div>
                         </li>
                     </ul>
                 </nav>
@@ -58,13 +80,13 @@
 <!-- Header End -->
 
 <!-- Hero Section Start -->
-<section id="home" class="pt-36">
+<section id="home" class="pt-36 transition-transform dark:bg-dark">
     <div class="container">
         <div class="flex flex-wrap">
             <div class="w-full self-center px-4 lg:w-1/2">
-                <h1 class="text-base font-semibold text-primary md:text-xl lg:text-2xl"> Hi, I’m S. Setyo Utomo</h1>
-                <h2 class="font-medium text-secondary text-lg mb-5"><span class="text-dark">Flutter Developer &</span>  Web Developer</h2>
-                <p class="font-medium text-secondary mb-10 leading-relaxed">I’m from Indonesia and I have been working as a Flutter and Website Developer for more than 1 years. I build my own mobile application and web development “Setup” since June 2023, and currently I develop for Setup as Full Stack Developer. I’ve been freelancing for the last 1 years, and right now I am looking forward to collaborate with you!
+                <h1 class="text-base font-semibold text-primary md:text-xl lg:text-2xl"> Hello, I’m S. Setyo Utomo</h1>
+                <h2 class="font-normal text-slate-700 text-md mb-5">Flutter Developer & UI/UX Design</h2>
+                <p class="font-normal text-secondary mb-10 leading-relaxed">I’m from Indonesia and I have been working as a Flutter Developer and UI/UX Design for more than 2 years. I build my own mobile application and web development “Setup” since June 2023, and currently I develop for Setup as Full Stack Developer. I’ve been freelancing for the last 1 years, and right now I am looking forward to collaborate with you!
                 </p>
                 <button class="text-sm font-semibold text-white bg-primary py-3 px-5 rounded-lg hover:opacity-80 hover:shadow-lg transition duration-500 flex">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -75,10 +97,10 @@
             </div>
             <div class="w-full self-end px-4 lg:w-1/2">
                 <div class=" relative mt-10 lg:mt-0 right-0">
-                    <img src="dist/img/myprofile.png" alt="Profile" class="max-h-50 mx-auto ">
-                    <span class="absolute -bottom-0 -z-10 left-1/2 -translate-x-1/2 md:scale-135 lg:scale-150">
+                    <img src="dist/img/myprofile.png" alt="Profile" class="relative z-10 max-h-50 mx-auto ">
+                    <span class="absolute -bottom-0 left-1/2 -translate-x-1/2 md:scale-135 lg:scale-150">
                         <svg width="400" heigh="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#5b21b6" d="M47.6,-51.4C56.4,-38.8,54.7,-19.4,55.4,0.7C56.1,20.8,59.3,41.7,50.5,50.5C41.7,59.3,20.8,56.1,-0.9,57.1C-22.7,58,-45.5,63.1,-59.9,54.3C-74.2,45.5,-80.3,22.7,-74.4,5.9C-68.5,-10.9,-50.6,-21.8,-36.2,-34.5C-21.8,-47.1,-10.9,-61.5,4.2,-65.8C19.4,-70,38.8,-64.1,47.6,-51.4Z" transform="translate(100 100) scale(1.1)" />
+                            <path fill="#14b8a6" d="M47.6,-51.4C56.4,-38.8,54.7,-19.4,55.4,0.7C56.1,20.8,59.3,41.7,50.5,50.5C41.7,59.3,20.8,56.1,-0.9,57.1C-22.7,58,-45.5,63.1,-59.9,54.3C-74.2,45.5,-80.3,22.7,-74.4,5.9C-68.5,-10.9,-50.6,-21.8,-36.2,-34.5C-21.8,-47.1,-10.9,-61.5,4.2,-65.8C19.4,-70,38.8,-64.1,47.6,-51.4Z" transform="translate(100 100) scale(1.1)" />
                           </svg>
                     </span>
                 </div>
@@ -89,22 +111,22 @@
 <!-- Hero Section End -->
 
 <!-- About Section Start -->
-<section id="about" class="pt-36 pb-32">
+<section id="about" class="pt-36 pb-32 dark:bg-dark">
     <div class="container">
          <div class="flex flex-wrap">
             <div class="w-full px-4 mb-10 lg:w-1/2">
                 <h4 class="font-bold uppercase text-primary text-lg mb-3">
                     About Me
                 </h4>
-                <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl">
-                    Build your mobile application and business webapp now
+                <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl dark:text-slate-400">
+                    Build your mobile application and business app now
                 </h2>
                 <p class="font-medium text-base text-secondary max-w-xl">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. At a tempore ipsam rerum, dolorem blanditiis molestiae!
                 </p>
             </div>
             <div class="w-full px-4 lg:w-1/2">
-                <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10">
+                <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10 dark:text-slate-400">
                     Social Media
                 </h3>
                 <p class="font-medium text-base text-secondary mb-6 lg:text-lg">
@@ -209,12 +231,12 @@
 <!-- About Section End -->
 
 <!-- Portofolio Section Start -->
-<section id="portofolio" class="pt-36 pb-16 bg-slate-100">
+<section id="portofolio" class="pt-36 pb-16 bg-slate-100 dark:bg-slate-700">
     <div class="container">
         <div class="w-full px-4">
             <div class="max-w-xl mx-auto text-center mb-16">
                 <h4 class="font-semibold text-lg text-primary mb-2">Portofolio</h4>
-                <h2 class="font-bold text-3xl text-dark mb-4 sm:text-4xl lg:text-5xl">My Certificate</h2>
+                <h2 class="font-bold text-3xl text-dark mb-4 sm:text-4xl lg:text-5xl dark:text-slate-300">My Certificate</h2>
                 <p class="font-medium text-md text-secondary md:text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo tempore maxime esse unde nesciunt, delectus praesentium expedita quis placeat, eveniet provident voluptates labore quos officiis!
                 </p>
             </div>
@@ -225,7 +247,7 @@
                 <div class="rounded-md shadow-md overflow-hidden mx-4">
                     <img src="dist/img/portofolio/certificate-1.png" alt="Certificate Mobile Developer" width="w-full">
                 </div>
-                <h3 class="font-semibold text-xl text-dark mt-5 mb-3 mx-4">Certificate Mobile Developer</h3>
+                <h3 class="font-semibold text-xl text-dark mt-5 mb-3 mx-4 dark:text-slate-300">Certificate Mobile Developer</h3>
                 <p class="font-medium text-base text-secondary mx-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident autem veritatis libero adipisci? Iure pariatur voluptate libero deleniti aperiam hic?
                 </p>
             </div>
@@ -233,7 +255,7 @@
                 <div class="rounded-md shadow-md overflow-hidden mx-4">
                     <img src="dist/img/portofolio/certificate-1.png" alt="Certificate Mobile Developer" width="w-full">
                 </div>
-                <h3 class="font-semibold text-xl text-dark mt-5 mb-3 mx-4">Certificate Mobile Developer</h3>
+                <h3 class="font-semibold text-xl text-dark mt-5 mb-3 mx-4 dark:text-slate-300">Certificate Mobile Developer</h3>
                 <p class="font-medium text-base text-secondary mx-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident autem veritatis libero adipisci? Iure pariatur voluptate libero deleniti aperiam hic?
                 </p>
             </div>
@@ -241,7 +263,7 @@
                 <div class="rounded-md shadow-md overflow-hidden mx-4">
                     <img src="dist/img/portofolio/certificate-1.png" alt="Certificate Mobile Developer" width="w-full">
                 </div>
-                <h3 class="font-semibold text-xl text-dark mt-5 mb-3 mx-4">Certificate Mobile Developer</h3>
+                <h3 class="font-semibold text-xl text-dark mt-5 mb-3 mx-4 dark:text-slate-300">Certificate Mobile Developer</h3>
                 <p class="font-medium text-base text-secondary mx-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident autem veritatis libero adipisci? Iure pariatur voluptate libero deleniti aperiam hic?
                 </p>
             </div>
@@ -249,7 +271,7 @@
                 <div class="rounded-md shadow-md overflow-hidden mx-4">
                     <img src="dist/img/portofolio/certificate-1.png" alt="Certificate Mobile Developer" width="w-full">
                 </div>
-                <h3 class="font-semibold text-xl text-dark mt-5 mb-3 mx-4">Certificate Mobile Developer</h3>
+                <h3 class="font-semibold text-xl text-dark mt-5 mb-3 mx-4 dark:text-slate-300">Certificate Mobile Developer</h3>
                 <p class="font-medium text-base text-secondary mx-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident autem veritatis libero adipisci? Iure pariatur voluptate libero deleniti aperiam hic?
                 </p>
             </div>
@@ -259,12 +281,12 @@
 <!-- Portofolio Section End -->
 
 <!-- Clients Section Start -->
-<section id="clients" class="pt-36 pb-32 bg-slate-800">
+<section id="clients" class="pt-36 pb-32 bg-slate-800 dark:bg-slate-200">
     <div class="container">
         <div class="w-full px-4">
             <div class="mx-auto text-center mb-16">
                 <h4 class="font-semibold text-lg text-primary mb-2">Clients</h4>
-                <h2 class="font-bold text-3xl text-white mb-4 sm:text-4xl lg:text-5xl">Who Have Collaborated</h2>
+                <h2 class="font-bold text-3xl text-white mb-4 sm:text-4xl lg:text-5xl dark:text-dark">Who Have Collaborated</h2>
                 <p class="font-medium text-md text-secondary md:text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo tempore maxime esse unde nesciunt, delectus praesentium expedita quis placeat, eveniet provident voluptates labore quos officiis!
                 </p>
             </div>
@@ -291,23 +313,23 @@
 <!-- Clients Section End -->
 
 <!-- Myproject Section Start -->
-<section id="myproject" class="pt-36 pb-32 bg-slate-100">
+<section id="myproject" class="pt-36 pb-32 bg-slate-100 dark:bg-dark">
     <div class="container">
         <div class="w-full px-4">
             <div class="max-w-xl mx-auto text-center mb-16">
                 <h4 class="font-semibold text-lg text-primary mb-2">My Project</h4>
-                <h2 class="font-bold text-3xl text-dark mb-4 sm:text-4xl lg:text-5xl">Latest Project</h2>
+                <h2 class="font-bold text-3xl text-dark mb-4 sm:text-4xl lg:text-5xl dark:text-slate-300">Latest Project</h2>
                 <p class="font-medium text-md text-secondary md:text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis, quos!
                 </p>
             </div>
         </div>
         <div class="flex flex-wrap">
             <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
                     <img src="https://source.unsplash.com/360x200?web-development" alt="webdevelopment" class="w-full">
                         <div class="py-8 px-6">
                             <h3>
-                                <a href="#" class="block mb-3 font-semibold text-dark text-xl hover:text-primary truncate">
+                                <a href="#" class="dark:text-slate-300 block mb-3 font-semibold text-dark text-xl hover:text-primary truncate">
                                     Web Development
                                 </a>
                             </h3>
@@ -320,11 +342,11 @@
                 </div>
             </div>
             <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
                     <img src="https://source.unsplash.com/360x200?programming" alt="programming" class="w-full">
                         <div class="py-8 px-6">
                             <h3>
-                                <a href="#" class="block mb-3 font-semibold text-dark text-xl hover:text-primary truncate">
+                                <a href="#" class="dark:text-slate-300 block mb-3 font-semibold text-dark text-xl hover:text-primary truncate">
                                     Mobile Applications
                                 </a>
                             </h3>
@@ -337,11 +359,11 @@
                 </div>
             </div>
             <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
                     <img src="https://source.unsplash.com/360x200?ui-ux-design" alt="uiuxdesign" class="w-full">
                         <div class="py-8 px-6">
                             <h3>
-                                <a href="#" class="block mb-3 font-semibold text-dark text-xl hover:text-primary truncate">
+                                <a href="#" class="dark:text-slate-300 block mb-3 font-semibold text-dark text-xl hover:text-primary truncate">
                                     UI/UX Design
                                 </a>
                             </h3>
@@ -359,12 +381,12 @@
 <!-- Myproject Section End -->
 
 <!-- Contact Section Start -->
-<section id="contact" class="pt-36 pb-32 bg-white">
+<section id="contact" class="pt-36 pb-32 bg-white dark:bg-slate-800">
     <div class="container">
         <div class="w-full px-4">
             <div class="mx-auto text-center mb-16">
                 <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
-                <h2 class="font-bold text-3xl text-dark mb-4 sm:text-4xl lg:text-5xl">Interested collaborate with me?</h2>
+                <h2 class="font-bold text-3xl text-dark mb-4 sm:text-4xl lg:text-5xl dark:text-slate-300">Interested collaborate with me?</h2>
                 <p class="font-medium text-md text-secondary md:text-lg mb-12">To build mobile application and website development <br> contact me.
                 </p>
             </div>
@@ -386,10 +408,10 @@
 <footer class="bg-dark pt-24 pb-12">
     <div class="container">
         <div class="flex flex-wrap">
-            <div class="w-full px-4 mb-12 text-slate-300 font-normal md:w-1/4">
+            <div class="w-full px-4 mb-12 mt-0 text-slate-300 font-normal md:w-1/4">
                 <h2>
-                    <a href="#home">
-                        <img src="dist/img/logo_dark.svg" alt="Logo-Setup" class="max-h-12 mb-4">
+                    <a href="#home" class="block mb-4 text-primary font-bold text-xl">
+                        tyoanantyo
                     </a>
                 </h2>
                 <h3 class="mb-3">Surakarta, Central Java <br> Indonesia</h3>

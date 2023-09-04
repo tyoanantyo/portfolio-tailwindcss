@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myproject</title>
+    <link rel="stylesheet" href="dist/css/style.css" />
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header
+      class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10"
+    >
+      <div class="container">
+        <div class="flex items-center justify-between relative">
+          <div class="px-4">
+            <a href="#home" class="block py-6 text-primary font-bold text-xl">
+              tyoanantyo
+            </a>
+          </div>
+          <div class="flex items-center px-4">
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="block absolute right-4 lg:hidden"
+            >
+              <span
+                class="hamburger-line transition duration-300 ease-in-out origin-top-left"
+              ></span>
+              <span
+                class="hamburger-line transition duration-300 ease-in-out"
+              ></span>
+              <span
+                class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"
+              ></span>
+            </button>
+
+            <nav
+              id="nav-menu"
+              class="hidden absolute py-5 bg-white shadow-md rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:dark:bg-transparent lg:max-w-full lg:shadow-none dark:shadow-slate-700 lg:rounded-none dark:bg-dark"
+            >
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a
+                    href="index.html"
+                    class="text-base text-dark py-2 mx-5 flex group-hover:text-primary dark:text-slate-200"
+                    >Home</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#about"
+                    class="text-base text-dark py-2 mx-5 flex group-hover:text-primary dark:text-slate-200"
+                    >About</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#portfolio"
+                    class="text-base text-dark py-2 mx-5 flex group-hover:text-primary dark:text-slate-200"
+                    >Portfolio</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#clients"
+                    class="text-base text-dark py-2 mx-5 flex group-hover:text-primary dark:text-slate-200"
+                    >Clients</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#myproject"
+                    class="text-base text-dark py-2 mx-5 flex group-hover:text-primary dark:text-slate-200"
+                    >My Project</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#contact"
+                    class="text-base text-dark py-2 mx-5 flex group-hover:text-primary dark:text-slate-200"
+                    >Contact</a
+                  >
+                </li>
+                <li class="flex items-center">
+                  <div class="flex px-4 py-2">
+                    <span
+                      class="mr-2 text-sm text-yellow-400 dark:text-slate-700"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-5 h-5"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                        />
+                      </svg>
+                    </span>
+                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                    <label for="dark-toggle">
+                      <div
+                        class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1 dark:bg-primary"
+                      >
+                        <div
+                          class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out dark:bg-slate-500"
+                        ></div>
+                      </div>
+                    </label>
+                    <span
+                      class="ml-2 text-sm text-slate-400 dark:text-yellow-200"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-5 h-5"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Detail MyProject Section Start -->
+    <section id="portfolio" class="pt-36 pb-16 bg-slate-100 dark:bg-slate-700">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="max-w-xl mb-16">
+            <h2
+              class="font-bold text-3xl text-dark mb-4 sm:text-4xl lg:text-5xl dark:text-slate-300"
+            >
+              My Project
+            </h2>
+            <p class="font-medium text-md text-secondary md:text-lg">
+              Listed below are a few of my current projects.
+            </p>
+          </div>
+        </div>
+
+        <div class="w-full px-4 flex flex-wrap justify-center xl:mx-auto">
+          <div class="mb-12 pd-4 md:w-1/2">
+            <div class="rounded-md shadow-md overflow-hidden mx-4">
+              <a href="#">
+                <img
+                  src="dist/img/myproject/project-1.png"
+                  alt="Certificate Mobile Developer"
+                  width="w-full"
+                />
+              </a>
+            </div>
+            <a href="#">
+              <h3
+                class="font-semibold text-xl text-dark mt-5 mb-3 mx-4 dark:text-slate-300"
+              >
+                Mobile Apps: E-Commerce and Chat Apps
+              </h3>
+            </a>
+            <a href="#">
+              <p
+                class="font-normal text-base text-secondary mx-4 flex dark:text-slate-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                  width="20"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+                  />
+                </svg>
+                <span class="ml-1"> View Study Case </span>
+              </p>
+            </a>
+          </div>
+          <div class="mb-12 pd-4 md:w-1/2">
+            <div class="rounded-md shadow-md overflow-hidden mx-4">
+              <a href="#">
+                <img
+                  src="dist/img/myproject/project-2.png"
+                  alt="Certificate Mobile Developer"
+                  width="w-full"
+                />
+              </a>
+            </div>
+            <a href="#">
+              <h3
+                class="font-semibold text-xl text-dark mt-5 mb-3 mx-4 dark:text-slate-300"
+              >
+                Mobile Apps: Build e-Wallet Mobile Apps
+              </h3>
+            </a>
+            <a href="#">
+              <p
+                class="font-normal text-base text-secondary mx-4 flex dark:text-slate-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                  width="20"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+                  />
+                </svg>
+                <span class="ml-1"> View Study Case </span>
+              </p>
+            </a>
+          </div>
+          <div class="mb-12 pd-4 md:w-1/2">
+            <div class="rounded-md shadow-md overflow-hidden mx-4">
+              <img
+                src="dist/img/myproject/project-1.png"
+                alt="Certificate Mobile Developer"
+                width="w-full"
+              />
+            </div>
+            <a href="#">
+              <h3
+                class="font-semibold text-xl text-dark mt-5 mb-3 mx-4 dark:text-slate-300"
+              >
+                UI/UX Design: Modern UI Design
+              </h3>
+            </a>
+            <a href="#">
+              <p
+                class="font-normal text-base text-secondary mx-4 flex dark:text-slate-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                  width="20"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+                  />
+                </svg>
+                <span class="ml-1"> View Study Case </span>
+              </p>
+            </a>
+          </div>
+          <div class="mb-12 pd-4 md:w-1/2">
+            <div class="rounded-md shadow-md overflow-hidden mx-4">
+              <img
+                src="dist/img/myproject/project-2.png"
+                alt="Certificate Mobile Developer"
+                width="w-full"
+              />
+            </div>
+            <a href="#">
+              <h3
+                class="font-semibold text-xl text-dark mt-5 mb-3 mx-4 dark:text-slate-300"
+              >
+                Web Apps: Full-Stack Web Developer
+              </h3>
+            </a>
+            <a href="#">
+              <p
+                class="font-normal text-base text-secondary mx-4 flex dark:text-slate-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                  width="20"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+                  />
+                </svg>
+                <span class="ml-1"> View Study Case </span>
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Detail My Project Section End -->
+
+    <!-- Contact Section Start -->
+    <section id="contact" class="pt-36 pb-32 bg-white dark:bg-slate-800">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="mx-auto text-center mb-16">
+            <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
+            <h2
+              class="font-bold text-3xl text-dark mb-4 sm:text-4xl lg:text-5xl dark:text-slate-300"
+            >
+              Interested collaborate with me?
+            </h2>
+            <p class="font-medium text-md text-secondary md:text-lg mb-12">
+              To build mobile application and website development <br />
+              contact me.
+            </p>
+          </div>
+        </div>
+
+        <div class="w-full mx-auto">
+          <a
+            href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSKhbsJsLhdbVZTNDjNpnBcLZcgjMsXBhgZrDwgGLvDPRNhCrSMRRVbVZqlvCDTxJTprnRhQ"
+            target="_blank"
+          >
+            <button
+              class="text-sm font-semibold text-white mx-auto text-center bg-primary py-3 px-5 rounded-lg hover:opacity-80 hover:shadow-lg transition duration-500 flex"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                />
+              </svg>
+              <span class="ml-1">Email Me</span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section  End -->
+
+    <!-- Footer Start -->
+    <footer class="bg-dark pt-24 pb-12">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div
+            class="w-full px-4 mb-12 mt-0 text-slate-300 font-normal md:w-1/4"
+          >
+            <h2>
+              <a href="#home" class="block mb-4 text-primary font-bold text-xl">
+                tyoanantyo
+              </a>
+            </h2>
+            <h3 class="mb-2">
+              Jl. Kerinci 2 No.93, Jeruksawit, <br />Surakarta, Central Java
+              <br />
+              Indonesia
+            </h3>
+            <p class="mb-3">mailto: build.anantyo@gmail.com</p>
+          </div>
+          <div class="w-full px-4 mb-12 md:w-1/4">
+            <h3 class="font-semibold text-white text-xl mb-5">About Us</h3>
+            <ul class="text-slate-300">
+              <li>
+                <a href="#" class="block text-base hover:text-primary mb-3">
+                  Mobile Applications
+                </a>
+                <a href="#" class="block text-base hover:text-primary mb-3">
+                  Web Development
+                </a>
+                <a href="#" class="block text-base hover:text-primary mb-3">
+                  UI/UX Design
+                </a>
+                <a href="#" class="block text-base hover:text-primary mb-3">
+                  Startup Technology
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="w-full px-4 mb-12 md:w-1/4">
+            <h3 class="font-semibold text-white text-xl mb-5">Support</h3>
+            <ul class="text-slate-300">
+              <li>
+                <a href="#" class="block text-base hover:text-primary mb-3">
+                  Features
+                </a>
+                <a href="#" class="block text-base hover:text-primary mb-3">
+                  Career
+                </a>
+                <a href="#" class="block text-base hover:text-primary mb-3">
+                  Company
+                </a>
+                <a href="#" class="block text-base hover:text-primary mb-3">
+                  Help Center
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="w-full px-4 mb-12 md:w-1/4">
+            <h3 class="font-semibold text-white text-xl mb-5">Social Media</h3>
+            <ul class="text-slate-300">
+              <li>
+                <a href="#" class="block text-base hover:text-primary mb-3">
+                  Instagram
+                </a>
+                <a href="#" class="block text-base hover:text-primary mb-3">
+                  Threads
+                </a>
+                <a href="#" class="block text-base hover:text-primary mb-3">
+                  LinkedIn
+                </a>
+                <a href="#" class="block text-base hover:text-primary mb-3">
+                  Dribble
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="w-full pt-10 border-t border-slate-700">
+          <p class="font-normal text-sm text-slate-500 text-center">
+            2023 Copyright Startup Technology • All rights reserved • Made in
+            Surakarta
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <script src="dist/js/script.js"></script>
+  </body>
+</html>
